@@ -1,0 +1,31 @@
+//desestructuracion
+
+const personas={
+    name: 'John',
+    lastname: 'text',
+    age:'45',
+    clave:'holamundo'
+}
+
+const{ name, lastname, clave }=personas;
+
+
+const callperson = ({name, lastname, clave,color='azul'}) =>console.log(name,lastname,clave,color);
+
+callperson(personas)
+
+const usecontext = ({age,name,lastname,clave})=>{
+    return{
+        nombre:name,
+        edad:age,
+        alias:clave,
+        latlng:{
+            lat:12.32423,
+            lng:23
+        }
+    }
+}
+
+const {nombre,edad,alias,latlng} = usecontext(personas);
+const {lat,lng}=latlng
+console.log(nombre,edad,alias, lat,lng);
